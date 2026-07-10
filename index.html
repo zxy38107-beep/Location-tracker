@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home Tracker</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <header>
+      <h1>🏠 Home Tracker</h1>
+      <p class="subtitle">Get notified when you arrive home</p>
+    </header>
+
+    <main>
+      <div class="card" id="setup-card">
+        <h2>1. Set your home location</h2>
+        <p class="hint">Stand at home and tap the button, or search an address.</p>
+        <button id="set-home-btn" class="btn primary">📍 Use My Current Location</button>
+
+        <div class="divider">or</div>
+
+        <input id="address-input" type="text" placeholder="Search an address..." />
+        <button id="search-btn" class="btn secondary">Search</button>
+        <div id="search-results"></div>
+      </div>
+
+      <div class="card" id="home-card" hidden>
+        <h2>Home is set ✅</h2>
+        <p id="home-coords" class="hint"></p>
+        <label class="radius-label">
+          Arrival radius: <span id="radius-value">100</span>m
+          <input type="range" id="radius-slider" min="30" max="500" step="10" value="100">
+        </label>
+        <button id="change-home-btn" class="btn secondary">Change Home Location</button>
+      </div>
+
+      <div class="card" id="tracking-card" hidden>
+        <h2>2. Start tracking</h2>
+        <p class="hint">Keep this tab open (or install as an app) for tracking to run.</p>
+        <button id="start-btn" class="btn primary">▶ Start Tracking</button>
+        <button id="stop-btn" class="btn danger" hidden>⏹ Stop Tracking</button>
+
+        <div id="status" class="status">
+          <span class="dot" id="status-dot"></span>
+          <span id="status-text">Not tracking</span>
+        </div>
+
+        <p class="hint" id="distance-text"></p>
+        <p class="hint" id="last-update"></p>
+      </div>
+
+      <div class="card" id="log-card" hidden>
+        <h2>Activity Log</h2>
+        <ul id="log-list"></ul>
+      </div>
+    </main>
+
+    <footer>
+      <p>Runs entirely in your browser. No data leaves your device.</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
