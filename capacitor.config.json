@@ -1,0 +1,6 @@
+{
+  "appId": "com.yourname.hometracker",
+  "appName": "Home Tracker",
+  "webDir": "www",
+  "bundledWebRuntime": false
+}
